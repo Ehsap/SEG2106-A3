@@ -24,10 +24,10 @@ public class Main {
     }
 
     public static void main(String[]args){
-        String fileName = "input2.txt";
+        //String fileName = "input2.txt";
 
         try{
-             fileReader = new FileReader("Assignment3Files/" + fileName);
+             fileReader = new FileReader("Assignment3Files/" + args[0]);
              bufferedReader = new BufferedReader(fileReader);
 
              token = getNextToken();
