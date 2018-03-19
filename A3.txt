@@ -1,0 +1,49 @@
+Justin Huynh
+7745112
+SEG2106
+Assignment 3
+Question 1
+
+ORIGINAL GRAMMER
+<program> ::= begin <statement_list> end 
+<statement_list> ::= <statement> ; <statement_list> 
+<statement_list> ::= <statement> ; 
+<statement> ::= id = <expression> 
+<expression> ::= <factor> + <factor> 
+<expression> ::= <factor> - <factor> 
+<expression> ::= <factor> 
+<factor> ::= id | num 
+
+IS EQUIVALENT TO
+
+<program> ::= begin <statement_list> end 
+
+<statement_list> ::= <statement> ; <statement_list> 
+				    |<statement> ; 
+					
+<statement> ::= id = <expression> 
+
+<expression> ::= <factor> + <factor> 
+				|<factor> - <factor> 
+				|<factor> 
+ 
+<factor> ::= id | num 
+
+LEFT FACTORED into LL(1)
+<program> ::= begin <statement_list> end 
+
+
+<statement_list>  ::= <statement><statement_list'>
+
+<statement_list'> ::= ;<statement_list>
+                     | ;
+					
+<statement> ::= id = <expression> 
+
+<expression> ::= <factor><expression'>
+
+<expression'> ::= +<factor>
+                | -<factor>
+				| epsilon
+ 
+<factor> ::= id | num 
